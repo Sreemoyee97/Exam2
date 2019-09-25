@@ -1,0 +1,40 @@
+archana
+
+1. initializing an empty git repo: git init
+2. git config --global user.email "archanasgujar@gmail.com"
+3. git config --global user.name "arch_123_"
+4. Adding local folder to git repo
+	- git init
+	- git add .
+	- git commit -m "First Comment"
+	- git remote add origin <url link>
+	- git remote -v
+	- git push origin master
+
+5. cloning into local repo:
+	- git clone https://github.com/archanasgujar/test.git
+
+6. pull changes from other members 
+	- git remote add <random_name> <link>
+	- git pull <link>
+
+7. undo uncommitted changes
+ 	- make a change in file
+ 	- git status
+ 	- get the modified file name
+	- git checkout <filename which was modified in local repo>
+	- for full git checkout .
+
+8. undo committed changes
+	- first make a changge in file
+	- git add <filename>
+	- git commit -m <random comment>
+	- git log
+	- get the hash id for change
+	- git revert <hash_id>
+
+9. resetting
+	- git log
+	- find the hash id till which you want to keep the code
+	- git reset --hard <hash id>
+	- changes above hash id will be removed

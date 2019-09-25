@@ -1,0 +1,142 @@
+GIT
+git init
+git add .
+git commit -m "First commit"
+git branch my-new-branch
+git checkout -b my-new-branch
+git branch
+git commit -a -m -> First add and then commit
+git config --global user.name "Github Username"
+git config --global user.email "myemail@gmail.com"
+git log
+git rebase -i HEAD~<num-commits>
+git reset --hard <tag/branch/commit_id> / git reset HEAD <filename>
+git status
+git revert <commit_log> - to rollback changes the nice way
+git remote add origin <GIT URL>
+git remove -v
+git push -u origin master
+git remote add deploy "Git URL"
+git push deploy
+git clone
+
+=============================================================================
+DOCKER
+
+Basic
+docker version
+docker -v
+docker info
+docker --help
+docker login
+------------------
+
+Images
+docker images
+docker pull
+docker rmi
+------------------
+
+Containers
+docker ps
+docker run
+docker start
+docker stop
+------------------
+
+System
+docker stats
+docker system df
+docker system prune
+
+
+docker images
+---------------------
+docker images --help
+docker pull ubuntu
+docker images
+
+What are images?
+Docker images are templates used to create Docker containers
+Container is a running instance of image
+
+Where are images stored?
+Registries (e.g. docker hub)
+Images can be stored at local or remote locations
+
+docker pull ubuntu:18.04
+docker pull <image name:tag>
+
+docker images -q
+
+docker images -a
+
+docker run <image>
+
+docker run --name MyUbuntu1 -it ubuntu bash
+
+Open another terminal
+docker ps
+
+docker inspect ubuntu
+
+docker rmi image
+docker rmi -f image
+
+docker rmi ubuntu:18.04
+docker rmi -f ubuntu:18.04
+
+
+Docker Containers
+________________
+Containers are running instances of Docker images
+
+docker run hello-world
+
+docker ps -a
+
+docker start containerName/ID
+
+docker stop containerName/ID
+
+docker run --name MyUbuntu1 -it ubuntu
+
+Open new terminal and docker ps
+
+docker start MyUbuntu1
+
+docker stop MyUbuntu1
+
+docker pause containerName/ID
+
+docker unpause containerName/ID
+
+docker stats MyUbuntu1
+
+To attach to a running container - docker attach  containerName/ID
+docker attach  MyUbuntu1
+
+docker kill MyUbuntu1
+
+docker rm MyUbuntu1
+
+
+Dockerfile
+---------------
+A text file with instructions to build image
+Automation of docker image creation
+
+Create a file named Dockerfile
+FROM ubuntu
+MAINTAINER Manish <manishhurkat@gmail.com>
+RUN apt-get update.  # gets executed during the building of the image
+CMD ["echo","hello"]. # gets executed when you create a container out of the image
+
+docker build .
+or
+docker build -t myimage1:1.0 .
+
+docker run <imageid>
+
+=============================================================================
+
